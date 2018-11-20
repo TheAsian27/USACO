@@ -1,5 +1,12 @@
-#import <fstream>
-#import <string>
+/*
+ID:aaron.l3
+PROB:beads
+LANG:C++
+*/
+
+#include <fstream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -9,20 +16,20 @@ int main(){
   vector<int> numbOfBeads(colors.size());
   ifstream input("beads.in");
   input >> colors;
-  colors = colors + colors
+  colors = colors + colors;
   for (int i = 0; i<colors.size(); i++) {
       firstColor = colors.at(i);
       lastColor = colors.at(i+colors.size());
-      numbOfBeads[i]=2
+      numbOfBeads[i]=2;
     for (int a = 0; a<colors.size(); a++) {
-      if ((color.at(a+i+1)==firstColor)||(color.at(a+i+1)=='w')) {
+      if ((colors.at(a+i+1)==firstColor)||(colors.at(a+i+1)=='w')) {
         numbOfBeads[i]++;
       } else {
         break;
       }
     }
     for (int b= colors.size(); b>0; b--) {
-      if ((color.at(b+i+colors.size()+1)==firstColor)||(color.at(b+i+colors.size()+1)=='w')) {
+      if ((colors.at(b+i+colors.size()+1)==firstColor)||(colors.at(b+i+colors.size()+1)=='w')) {
         numbOfBeads[i]++;
       } else {
         break;
