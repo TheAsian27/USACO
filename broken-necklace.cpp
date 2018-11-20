@@ -14,6 +14,7 @@ int main(){
   string colors;
   char firstColor,lastColor;
   vector<int> numbOfBeads(beads);
+  int beads = 0;
   ifstream input("beads.in");
   input >> beads;
   input >> colors;
