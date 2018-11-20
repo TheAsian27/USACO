@@ -45,6 +45,6 @@ int main(){
    }
   }
   ofstream output("beads.out");
-  output << numbOfBeads[0];
+  output << numbOfBeads[0]<<endl;
   output.close();
 }
