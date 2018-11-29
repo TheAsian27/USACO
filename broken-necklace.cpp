@@ -30,8 +30,8 @@ int main(){
         break;
       }
     }
-    for (int b= beads; b>0; b--) {
-      if ((colors.at(b+i+beads+1)==firstColor)||(colors.at(b+i+beads+1)=='w')) {
+    for (int b = beads; b>0; b--) {
+      if ((colors.at(b+i+beads)==firstColor)||(colors.at(b+i+beads)=='w')) {
         numbOfBeads[i]++;
       } else {
         break;
