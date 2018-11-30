@@ -38,7 +38,7 @@ int main(){
     }
     if (lastColor=='w') {
       for (int y = i - 1; y>0; y--) {
-        if (colors.at(y)!='w')) {
+        if (colors.at(y)!='w') {
           lastcolor = colors.at(y);
           break;
         }
@@ -60,7 +60,6 @@ int main(){
     }
   }
   int max = 0;
-  max = (max < number) ? number : max;
   for (int i : numbOfBeads) {
      max = (max < i) ? i : max;
   }
