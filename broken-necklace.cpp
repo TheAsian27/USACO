@@ -13,7 +13,6 @@ using namespace std;
 int main(){
   string colors;
   char firstColor,lastColor;
-  vector<int> numbOfBeads(beads);
   int beads = 0;
   
   ifstream input("beads.in");
@@ -21,49 +20,51 @@ int main(){
   input >> colors;
   input.close();
   
+  vector<int> numbOfBeads(beads);
+  
   colors = colors + colors;
   
   for (int i = 0; i<beads; i++) {
     firstColor = colors.at(i);
-    lastColor = colors.at(i+beads);
+    lastColor = colors.at(i+beads-1);
     numbOfBeads[i]=0;
     if (firstColor=='w') {
-      for (int x = 0; x<beads; x++) {
-        if (colors.at(x+i+1)!='w') {
-          firstColor = colors.at(a+x+1);
+      for (int x = i; x<beads; x++) {
+        if (colors.at(x)!='w') {
+          firstColor = colors.at(x);
           break;
         }
       }
     }
     if (lastColor=='w') {
-      for (int y = beads; b>0; b--) {
-        if (colors.at(y+i+beads)!='w')) {
-          lastcolor = colors.at(y+i+beads);
+      for (int y = i - 1; y>0; y--) {
+        if (colors.at(y)!='w')) {
+          lastcolor = colors.at(y);
           break;
         }
       }
     }
-    for (int a = 0; a<beads; a++) {
-      if ((colors.at(a+i+1)==firstColor)||(colors.at(a+i+1)=='w')) {
+    for (int a = i; a<beads; a++) {
+      if ((colors.at(a)==firstColor)||(colors.at(a)=='w')) {
         numbOfBeads[i]++;
       } else {
         break;
       }
     }
-    for (int b = beads; b>0; b--) {
-      if ((colors.at(b+i+beads)==lastColor)||(colors.at(b+i+beads)=='w')) {
+    for (int b = i-1; b>0; b--) {
+      if ((colors.at(b)==lastColor)||(colors.at(b)=='w')) {
         numbOfBeads[i]++;
       } else {
         break;
       }
     }
   }
-  for (int i = 1; i<colors; i++) {
-   if (numbOfBeads[0] < numbOfBeads[i]) {
-     numbOfBeads[0] = numbOfBeads[i];
-   }
+  int max = 0;
+  max = (max < number) ? number : max;
+  for (int i : numbOfBeads) {
+     max = (max < i) ? i : max;
   }
   ofstream output("beads.out");
-  output << numbOfBeads[0]<<endl;
+  output << max <<endl;
   output.close();
 }
