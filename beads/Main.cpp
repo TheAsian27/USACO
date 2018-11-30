@@ -37,7 +37,7 @@ int main(){
       }
     }
     if (lastColor=='w') {
-      for (int y = i - 1; y>0; y--) {
+      for (int y = i - 1; y>=0; y--) {
         if (colors.at(y)!='w') {
           lastcolor = colors.at(y);
           break;
@@ -51,7 +51,7 @@ int main(){
         break;
       }
     }
-    for (int b = i-1; b>0; b--) {
+    for (int b = i-1; b>=0; b--) {
       if ((colors.at(b)==lastColor)||(colors.at(b)=='w')) {
         numbOfBeads[i]++;
       } else {
