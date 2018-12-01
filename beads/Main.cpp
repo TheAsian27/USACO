@@ -39,7 +39,7 @@ int main(){
     if (lastColor=='w') {
       for (int y = i - 1; y>=0; y--) {
         if (colors.at(y)!='w') {
-          lastcolor = colors.at(y);
+          lastColor = colors.at(y);
           break;
         }
       }
