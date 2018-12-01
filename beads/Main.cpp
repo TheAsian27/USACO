@@ -20,13 +20,13 @@ int main(){
   input >> colors;
   input.close();
   
+  beads *= 2;
+  colors = colors + colors; //we should check entire length of doubled string to get max, not just length of necklace
   vector<int> numbOfBeads(beads);
-  
-  colors = colors + colors;
   
   for (int i = 0; i<beads; i++) {
     firstColor = colors.at(i);
-    lastColor = colors.at(i+beads-1);
+    lastColor = colors.at(i-1); //we shouldn't add beads on: this allows proper checking to left
     numbOfBeads[i]=0;
     if (firstColor=='w') {
       for (int x = i; x<beads; x++) {
