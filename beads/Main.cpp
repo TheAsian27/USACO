@@ -3,7 +3,7 @@ ID:aaron.l3
 PROB:beads
 LANG:C++
 */
-
+//compile errors for triple red beads
 #include <fstream>
 #include <string>
 #include <vector>
@@ -62,6 +62,9 @@ int main(){
   int max = 0;
   for (int i : numbOfBeads) {
      max = (max < i) ? i : max;
+  }
+  if (max > beads){
+    max = beads;
   }
   ofstream output("beads.out");
   output << max <<endl;
