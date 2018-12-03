@@ -12,7 +12,7 @@ using namespace std;
 struct info {
   int startTime;
   int endTime;
-}
+};
 
 int main() {
   vector<info>farmer;
