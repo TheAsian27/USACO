@@ -16,47 +16,52 @@ struct info {
 
 int main() {
 	vector<info>farmer;
-	int numbOfFarmers;
+	int farmers;
 	bool time[1000000];
-	vector<int> maxSqueeze;
-	vector<int> maxNoSqueeze;
+	int maxSqueeze = 0;
+	int lastSqueeze = 0;
+	int maxNoSqueeze = 0;
+	int lastNoSqueeze = 0;
 	bool current;
-	int count2 = 0;
-	int count1 = 0;
 
 	ifstream input("milk2.in");
-	input >> numbOfFarmers;
-	for (int i = 0; i < numbOfFarmers; i++) {
+	input >> farmers;
+	for (int i = 0; i < farmers; i++) {
 		input >> farmer[i].startTime >> farmer[i].endTime;
 	}
 	input.close();
 
-	//----------------Makes all elements that are within ranges True----------------
-	for (int i = 0; i < numbOfFarmers; i++) {
+	/*----------------Makes all elements that are within ranges True----------------*/
+	for (int i = 0; i < farmers; i++) {
 		for (int j = farmer[i].startTime; j < farmer[i].endTime; j++) {
 			time[j] = true;
 		}
 	}
-	//------------------------------------------------------------------------------
+	/*------------------------------------------------------------------------------*/
 
 	if (time[0]) {
 		current = true;
 		for (int i = 0; i > 1000000; i++) {//goes through array
 			if (time[i] != current) {
-				if (current) {
-					count2++;
-				}
-				else {
-					count1++;
+				if (time[i]) {
+					if (maxSqueeze > lastSqueeze) {
+						lastSqueeze = maxSqueeze;
+					}
+					maxSqueeze = 0;
+				} else {
+					if (maxNoSqueeze > lastNoSqueeze) {
+						lastNoSqueeze = maxNoSqueeze;
+					}
+					maxNoSqueeze = 0;
 				}
 				current != current;
 			}
 			else {
-				if (current) {
-					maxSqueeze[count1]++;
+				if (time[i]) {
+					maxSqueeze++;
 				}
 				else {
-					maxNoSqueeze[count2]++;
+					maxNoSqueeze++;
 				}
 			}
 		}
@@ -65,33 +70,31 @@ int main() {
 		current = false;
 		for (int i = 0; i > 1000000; i++) {//goes through array
 			if (time[i] != current) {
-				if (current) {
-					count1++;
+				if (time[i]) {
+					if (maxSqueeze > lastSqueeze) {
+						lastSqueeze = maxSqueeze;
+					}
+					maxSqueeze = 0;
 				}
 				else {
-					count2++;
+					if (maxNoSqueeze > lastNoSqueeze) {
+						lastNoSqueeze = maxNoSqueeze;
+					}
+					maxNoSqueeze = 0;
 				}
 				current != current;
 			}
 			else {
-				if (current) {
-					maxSqueeze[count1]++;
+				if (time[i]) {
+					maxSqueeze++;
 				}
 				else {
-					maxNoSqueeze[count2]++;
+					maxNoSqueeze++;
 				}
 			}
 		}
 	}
-	int max1 = 0;
-	int max2 = 0;
-	for (int i : maxSqueeze) {
-		max1 = (max1 < i) ? i : max1;
-	}
-	for (int i : maxNoSqueeze) {
-		max2 = (max2 < i) ? i : max2;
-	}
-	ofstream output(milk2.out);
-	output << max1 << " " << max2 << "\n";
+	ofstream output("milk2.out");
+	output << lastSqueeze << " " << lastNoSqueeze<< "\n";
 	output.close();
 }
