@@ -19,7 +19,7 @@ int main() {
   int numbOfFarmers;
   bool time [1000000];
   vector<int> maxSqueeze;
-  vectir<int> maxNoSqueeze;
+  vector<int> maxNoSqueeze;
   bool current;
   int count2 = 0;
   int count1 = 0;
@@ -85,6 +85,6 @@ int main() {
      max2 = (max2 < i) ? i : max2;
   }
   ofstream output(milk2.out);
-  output << max1 << " " << max2 << \n;
+  output << max1 << " " << max2 << "\n";
   output.close();
 }
