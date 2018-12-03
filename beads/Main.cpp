@@ -63,8 +63,8 @@ int main(){
   for (int i : numbOfBeads) {
      max = (max < i) ? i : max;
   }
-  if (max > beads){
-    max = beads;
+  if (max > (beads/2)) {
+    max = beads/2;
   }
   ofstream output("beads.out");
   output << max <<endl;
