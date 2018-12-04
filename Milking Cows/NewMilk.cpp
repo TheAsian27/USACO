@@ -6,7 +6,7 @@ LANG:C++
 
 #include <fstream>
 #include <vector>
-#include <algorith>
+#include <algorithm>
 
 using namespace std;
 
