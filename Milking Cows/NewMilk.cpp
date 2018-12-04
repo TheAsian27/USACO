@@ -28,7 +28,7 @@ int main() {
   }
   input.close();
 
-  sort(farmer.begin(), farmer.end(), [](info a, info b)( return a.startTime < b.startTime; });
+  sort(farmer.begin(), farmer.end(), [](info a, info b){ return a.startTime < b.startTime; });
   
   for (int i = 0; i<farmer.size(); i++) {
     for (int j = i; j<farmer.size(); j++) {
