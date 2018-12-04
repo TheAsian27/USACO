@@ -30,7 +30,7 @@ int main() {
 		input >> farmer[i].startTime >> farmer[i].endTime;
 	}
 	input.close();
-
+	
 	/*----------------Makes all elements that are within ranges True----------------*/
 	for (int i = 0; i < farmers; i++) {
 		for (int j = farmer[i].startTime; j < farmer[i].endTime; j++) {
