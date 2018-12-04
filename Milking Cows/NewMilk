@@ -16,19 +16,18 @@ struct info {
 };
 
 int main() {
-	vector<info>farmer;
-	int farmers;
-	int maxSqueeze = 0;
-	int maxNoSqueeze = 0;
+  int farmers;
+  int maxSqueeze = 0;
+  int maxNoSqueeze = 0;
 
-	ifstream input("milk2.in");
-	input >> farmers;
+  ifstream input("milk2.in");
+  input >> farmers;
   vector<info>farmer(farmers);
-	for (int i = 0; i < farmers; i++) {
-		input >> farmer[i].startTime >> farmer[i].endTime;
-	}
-	input.close();
-	
+  for (int i = 0; i < farmers; i++) {
+    input >> farmer[i].startTime >> farmer[i].endTime;
+  }
+  input.close();
+
   sort(farmer.begin(), farmer.end(), [](info a, info b)( return a.startTime < b.startTime; });
   
   for (int i = 0; i<farmer.size(); i++) {
