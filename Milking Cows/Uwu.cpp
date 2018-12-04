@@ -41,7 +41,7 @@ int main() {
 
 	if (time[0]) {
 		current = true;
-		for (int i = 0; i > 1000000; i++) {//goes through array
+		for (int i = 0; i < 1000000; i++) {//goes through array
 			if (time[i] != current) {
 				if (time[i]) {
 					if (maxSqueeze > lastSqueeze) {
@@ -68,7 +68,7 @@ int main() {
 	}
 	else {
 		current = false;
-		for (int i = 0; i > 1000000; i++) {//goes through array
+		for (int i = 0; i < 1000000; i++) {//goes through array
 			if (time[i] != current) {
 				if (time[i]) {
 					if (maxSqueeze > lastSqueeze) {
