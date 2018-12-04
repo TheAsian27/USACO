@@ -6,13 +6,13 @@ LANG:C++
 
 #include <fstream>
 #include <vector>
-#include <algorithim>
+#include <algorith>
 
 using namespace std;
 
 struct info {
-	int startTime;
-	int endTime;
+  int startTime;
+  int endTime;
 };
 
 int main() {
