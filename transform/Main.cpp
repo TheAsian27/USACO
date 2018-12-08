@@ -31,7 +31,7 @@ int main()
   for (int i = 0; i < size; i++) {
     char temp[size][size];
     for (int j = 0; i < size; i++) {
-      temp[i][j] = square[][]
+      temp[i][j] = square[j][]
     }
   }
 }
