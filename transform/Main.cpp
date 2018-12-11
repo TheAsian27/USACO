@@ -10,9 +10,14 @@ LANG : C++
 
 using namespace std;
 
+int size;
+
+char [][size] rotation(char [][size] x) {
+  
+}
+
 int main()
 {
-  int size;
   ifstream input("transform.in");
   input >> size;
   char square [size][size];
