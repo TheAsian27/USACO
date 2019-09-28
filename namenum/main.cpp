@@ -10,9 +10,24 @@ LANG : C++14
 using namespace std;
 
 int main() {
-    ifstream nameList("dict.txt");
-    string names[5000];
-    while (!nameList.oef()) {
-        nameList >> names[i];
-    }
+	string s;
+	string num = "";
+	ifstream nameList("dict.txt");
+	vector<string> names;
+	while (!nameList.eof()) {
+		nameList >> s;
+		names.push_back(s);
+	}
+	namelist.close();
+    
+	ifstream number("namenum.in");
+	number >> s;
+	number.close();
+	num += s;
+    
+	for (int i = 0; i < number.length; i++) {
+		for (int j = 0; j < 3; j++) {
+			
+		}
+	}
 }
