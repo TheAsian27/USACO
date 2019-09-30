@@ -24,10 +24,14 @@ int main() {
 	number >> s;
 	number.close();
 	num += s;
-    
-	for (int i = 0; i < number.length; i++) {
-		for (int j = 0; j < 3; j++) {
-			
+    	for (int i = 0; i < names.length; i++) {
+		for (int j = 0; j < number.length; j++) {
+			switch (number[j]) {
+				case 2:
+					for (int k = 0; k < 3; k++) {
+						
+					}
+			}
 		}
 	}
 }
