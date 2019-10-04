@@ -16,7 +16,8 @@ struct nut {
 	nut(char _a, char _b, char _c): a(_a), b(_b), c(_c) {}
 };
 
-char yeet(int x) {
+char yeet(int x, int y) {
+public:
 	switch (x) {
 		case 2:
 			nut letters('A', 'B', 'C');
@@ -44,6 +45,19 @@ char yeet(int x) {
 			break;
 		default:
 	}
+	switch (y) {
+		case 0:
+			return letters.a;
+			break;
+		case 1:
+			return letters.b;
+			break;
+		case 2:
+			return letters.c;
+			break;
+		default:
+			return;
+	}
 }
 
 int main() {
@@ -61,10 +75,13 @@ int main() {
 	number >> s;
 	number.close();
 	num += s;
-	for (int i = 0; i < names.size; i++) {
-		for (int j = 0; j < num.length() ; j++) {
-			if () {
-			
+	for (int i = 0; i < num.length(); i ++) {
+		for (int j = 0; j < names.size; j++) {
+			for (int k = 0; k < 3; k ++) {
+				if (yeet(num.at(),k) != names[j].at(i)) {
+					names.remove(j);
+					j--;
+				}
 			}
 		}
 	}
