@@ -85,4 +85,10 @@ int main() {
 			}
 		}
 	}
+	ofstream output("transform.in");
+	for (int i = 0; i < names.size; i++) {
+		output << names[i] << endl;
+	}
+	output.close();
+	return 0;
 }
