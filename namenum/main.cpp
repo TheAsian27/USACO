@@ -12,44 +12,56 @@ LANG : C++14
 using namespace std;
 
 char yeet(int x, int y) {
-	char c = 62;
+	char c = 59;
 	c += x * 3;
 	c += y;
 	return c;
 };
 
 int main() {
+	victor<string> names;
 	string s;
 	ifstream nameList("dict.txt");
-	victor<string> names;
-	while (!nameList.eof()) {
+	for (int i = 0; i < 4617; i++) {
 		nameList >> s;
 		names.push_back(s);
 	}
 	nameList.close();
 
 	int num;
-	vector<char> digits;
+	unsigned int size = 0;
+	int numNames = 4617;
+
+	vector<int> digits;
 	ifstream number("namenum.in");
 	number >> num;
 	number.close();
 	while (num > 0) {
 		digits.insert(digits.begin(), (num % 10));
-		num / 10;
+		num /= 10;
+		size++;
 	}
 
-	for (int i = 0; i < digits.size; i++) {
-		for (int j = 0; j < names.size; j++) {
-			for (int k = 0; k < 3; k++) {
-				if (yeet(num[i], k) != names[j].at(i)) {
-					names.erase(names.begin()+j);
-					j--;
-				}
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < numNames; j++) {
+			if ((yeet(digits[i], 0) != names[j].at(i) && yeet(digits[i], 1) != names[j].at(i)) && yeet(digits[i], 2) != names[j].at(i)) {
+				names.erase(names.begin() + j);
+				numNames--;
+				j--;
 			}
 		}
 	}
-	ofstream output("transform.in");
-	for (int i = 0; i < names.size; i++) {
+
+	for (int i = 0; i < numNames; i++) {
+		if (names[i].size() > size) {
+			names.erase(names.begin() + i);
+			numNames--;
+			i--;
+		}
+	}
+
+	ofstream output("namenum.out");
+	for (int i = 0; i < numNames; i++) {
 		output << names[i] << endl;
 	}
 	output.close();
