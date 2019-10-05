@@ -15,6 +15,9 @@ char yeet(int x, int y) {
 	char c = 59;
 	c += x * 3;
 	c += y;
+	if (c >= 'Q')
+		c--;
+
 	return c;
 };
 
@@ -62,7 +65,7 @@ int main() {
 
 	ofstream output("namenum.out");
 	for (int i = 0; i < numNames; i++) {
-		output << names[i] << endl;
+		output << names[i] << "\n";
 	}
 	output.close();
 	return 0;
