@@ -14,7 +14,7 @@ using namespace std;
 char yeet(int x, int y) {
 	char a;
 	switch (x) {
-	case 2: 
+	case 2:
 		a = 'A';
 		goto finish;
 	case 3:
@@ -38,14 +38,14 @@ char yeet(int x, int y) {
 
 	case 7:
 		a = 'P';
-		if (y > 1) a += y;
+		if (y != 0) a += y + 1;
 		break;
 
 	finish:
-		a += y - 1;
+		a += y;
 	}
 	return a;
-};
+}
 
 int main() {
 	vector<string> names;
@@ -86,6 +86,7 @@ int main() {
 			}
 		}
 	}
+
 
 	ofstream output("namenum.out");
 	if (numNames == 0) {
