@@ -39,7 +39,12 @@ int main() {
 	ifstream input("palsquare.in");
 	input >> base;
 	input.close();
-	for (int i = 1; i <= 300; i++) {
-		if (0i*i
+	ofstream output("palsquare.out");
+	for (int i =1; i <= 300; i++) {
+		if(isPal(convert (base,i*i))){
+			output << i << " " << i*i << endl;
+		}
 	}
+	output.close()
+	return 0;
 }
